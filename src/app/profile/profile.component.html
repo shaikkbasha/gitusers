@@ -1,0 +1,50 @@
+<form action="profile">
+  <div class="form-group">
+    <input type="text" name="username" placeholder="search lru serial no" [(ngModel)]="username">
+<button (click)="findSerialNumber()">go</button>
+  </div>
+</form>
+
+
+<div *ngIf="profile">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{profile.name}}<small>{{profile.login}}</small>, work at {{profile.company}}
+    </div>
+  </div>
+<div class="panel-body">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="{{profile.avatar_url}}" alt="no image" class="img-circle img-responsive">
+
+    </div>
+    <div class="col-sm-5">
+      <ul class="list-group">
+        <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+        <li class="list-group-item"  *ngIf="profile.bio">hire personal</li>
+        <li class="list-group-item" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
+        <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+
+      </ul>
+
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <span class="label label-defalut">followers{{profile.followers}}</span>
+        <span class="label label-defalut">following{{profile.following}}</span>
+        <span class="label label-defalut">following_url{{profile.following_url}}</span>
+
+        <span class="label label-defalut">public_gists{{profile.public_gists}}</span>
+
+        <span class="label label-defalut">public_repos{{profile.public_repos}}</span>
+
+        </p>
+        
+    </div>
+    <div *ngFor="let rep of repos">
+      {{rep.name}}<a href="{{rep.html_url}}">rep</a>
+
+    </div>
+  </div>
+</div>
+</div>
