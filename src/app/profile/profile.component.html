@@ -1,7 +1,7 @@
 <form action="profile">
   <div class="form-group">
-    <input type="text" name="username" placeholder="search lru serial no" [(ngModel)]="username">
-<button (click)="findSerialNumber()">go</button>
+    <input type="text" name="username"  #username placeholder="search lru serial no" [(ngModel)]="username">
+<button (click)="findSerialNumber(username.value)">go</button>
   </div>
 </form>
 

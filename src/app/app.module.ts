@@ -8,17 +8,20 @@ import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
+import { DropdownListService } from './dropdown-list.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    DropdownListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,NgbModule.forRoot(),FormsModule,ReactiveFormsModule,
   ],
-  providers: [ProfileService],
+  providers: [ProfileService,DropdownListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
